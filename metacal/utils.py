@@ -5,7 +5,7 @@ import socket
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-from expconf import logit_names
+from metacal.expconf import logit_names
 
 logit_base = Path("")
 

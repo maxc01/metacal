@@ -68,7 +68,7 @@ class TemperatureScaling:
 
 
 def run_ts(conf_name):
-    from utils import load_data
+    from metacal.utils import load_data
 
     X_train, Y_train, X_test, Y_test = load_data(conf_name)
     ts_model = TemperatureScaling()

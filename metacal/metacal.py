@@ -5,8 +5,8 @@ from scipy.stats import entropy
 from sklearn.model_selection import train_test_split
 from sklearn.isotonic import IsotonicRegression
 
-from ts import TemperatureScaling
-from utils import errors
+from metacal.ts import TemperatureScaling
+from metacal.utils import errors
 
 
 class MetaCalMisCoverage:
