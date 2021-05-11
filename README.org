@@ -1,0 +1,27 @@
+#+TITLE: Meta-Cal
+
+This repository implements our ICML2021 paper: [[https://arxiv.org/abs/2105.04290][Meta-Cal: Well-controlled
+Post-hoc Calibration by Ranking]].
+
+
+* usage
+#+begin_src python
+from metacal import MetaCalMisCoverage
+from metacal import MetaCalCoverageAcc
+
+        model = CAL_TABLE[cal_algo]()
+        st = time.time()
+        model.fit(X1, Y1)
+        proba_cal = model.predict(X2)
+
+#+end_src
+
+* citation
+#+begin_src bibtex
+@inproceedings{Ma2021a,
+  TITLE = {Meta-Cal: Well-controlled Post-hoc Calibration by Ranking},
+  AUTHOR = {Ma, Xingchen and Blaschko, Matthew B.},
+  BOOKTITLE = {International Conference on Machine Learning},
+  YEAR = {2021},
+}
+#+end_src
