@@ -26,6 +26,13 @@ python test_metacal.py
 : ECE: 0.005411952048287812, empirical coverageacc: 0.3377814845704754
 
 
+* note
+As we've mentioned in the main paper:
+#+begin_quote
+To ensure the independence assumption, the training data of Meta-Cal should be
+different from the data set used to train the multi-class classifier.
+#+end_quote
+
 * citation
 #+begin_src bibtex
 @inproceedings{Ma2021a,
