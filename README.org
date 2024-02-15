@@ -11,6 +11,8 @@ cd metacal
 poetry install
 #+end_src
 
+
+
 * usage
 
 See the test code.
@@ -24,6 +26,38 @@ python test_metacal.py
 : ECE: 0.014405990597344159, empirical miscoverage: 0.013580246913580247
 : Test CoverageAcc (target=0.34)
 : ECE: 0.005411952048287812, empirical coverageacc: 0.3377814845704754
+
+
+* examples
+
+An example on MNIST dataset can be found in =examples= folder. To generate the
+logits, the mnist training script (copied and adapted from the official
+pytorch repo) can be run using the following commands:
+
+#+begin_src shell
+cd metacal/examples
+python main.py
+#+end_src
+
+I already uploaded the generated logits in the same folder. To run MetaCal:
+#+begin_src sh
+python test_metacal.py --target_acc 0.999
+#+end_src
+
+#+RESULTS:
+: Test MisCoverage (target=0.05)
+: ECE: 0.0032083215959369618, empirical miscoverage: 0.0502167994353131
+: Original test accuracy: 0.9917
+: Test CoverageAcc (target=0.999)
+: ECE: 0.0029820996381342496, empirical coverageacc: 0.9995717803233058
+
+Another usage of MetaCal is that it can remove ambiguous examplers, to show
+this, I made two plots comparing the TSNE of the original logits and the
+logits returned by MetaCal. From the following figure, we can see MetaCal
+produces a very clean separation among 10 classes while the original TSNE has
+many wrongly located points.
+
+[[./examples/TSNE-metacal.jpg]]
 
 
 * note
