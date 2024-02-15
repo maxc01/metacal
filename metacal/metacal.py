@@ -32,7 +32,7 @@ class MetaCalMisCoverage:
         y2 = np.r_[y2, ys_pos]
         # 2. compute threshold on x1
         scores_x1 = entropy(softmax(x1, axis=1), axis=1)
-        threshold = np.quantile(scores_x1, 1 - self.alpha, interpolation="higher")
+        threshold = np.quantile(scores_x1, 1 - self.alpha, method="higher")
 
         # 3. fit a base calibrator on (x2,y2) | h(X) < threshold
         scores_x2 = entropy(softmax(x2, axis=1), axis=1)

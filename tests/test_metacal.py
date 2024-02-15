@@ -20,6 +20,7 @@ def make_data():
 
 def test_mis_cov():
     X1, X2, Y1, Y2 = make_data()
+    __import__('ipdb').set_trace()
     model = MetaCalMisCoverage(alpha=0.05)
     model.fit(X1, Y1)
     ece = ECE(model.predict(X2), Y2, 15)
